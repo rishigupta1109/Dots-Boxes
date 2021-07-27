@@ -1,0 +1,120 @@
+html,body{
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+}
+.home{
+    padding: 25px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.container{
+    height:600px;
+    width:1349px;
+    background-color: white;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box{box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe; 
+    height: 400px;
+    width:600px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxes{
+    height:64px;
+    width: 64px;
+    background-color: white;
+}
+.Lw,.Rw{
+    width:7px;
+    height:64px;
+    background-color: #c0a1ea;
+}
+.Tw,.Bw{
+    width:73.37px;
+    height:7px;
+    background-color:#c0a1ea;
+}
+.boxes{
+    font-size: xx-large;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.wall:hover{
+    cursor: pointer;
+}
+.navbar{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+.Player{
+    height:190px;
+    width:170px;
+    padding: 25px;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.P1{
+    box-shadow:  0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0000, 0 0 0.8rem #ff0000, 0 0 2.8rem #ff0000, inset 0 0 1.3rem #ff0000;
+
+}
+.P2{
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #4aff0f, 0 0 0.8rem#4aff0f, 0 0 2.8rem #4aff0f, inset 0 0 1.3rem #4aff0f;
+}
+.wall{
+    transition: ease-in 2ms;
+}
+.startbtn{
+    border-radius: 10px;
+    height:50px;
+    width:150px;
+    margin-top: 25px;
+    background-color: white;
+    border:none;
+    outline: white;
+}
+.startbtn:hover{
+    cursor: pointer;
+}
+input[type="text"]{
+    height:20px;
+    width:135px;
+}
