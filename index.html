@@ -13,9 +13,11 @@
         <h1>Dots and Boxes</h1>
         <h3>Initials of Players</h3>
         <h4>Player1</h4>
-        <input id="P1init" type="text">
+        <input id="P1init" maxlength="1"  type="text">
         <h4>Player2</h4>
-        <input id="P2init" type="text">
+        <input id="P2init" maxlength="1"  type="text">
+        <h4>Size</h4>
+        <input type="number" min="0" max="5" id="row" placeholder="rows"><p>X</p><input min="0" max="5"  type="number" id="column" placeholder="columns">
         <button class="startbtn">Start Game</button>
 
     </div>
@@ -28,70 +30,7 @@
             <h3 class="P1_msg">Your Turn</h3>
         </div>
         <div class="box">
-            <div class="rows">
-                <div class="Tw wall w000"></div>
-                <div class="Tw wall w010"></div>
-                <div class="Tw wall w020"></div>
-            </div>
-            <div class="rows">
-                <div class="Lw wall w003"></div>
-                <div class="boxes b00"></div>
-                <div class="Lw wall w001 w013"></div>
-                <div class="boxes b01"></div>
-                <div class="Lw wall w011 w023"></div>
-                <div class="boxes b02"></div>
-                <div class="Rw wall w021"></div>
-            </div>
-            <div class="rows">
-                <div class="Bw wall w002 w100"></div>
-                <div class="Bw wall w012 w110"></div>
-                <div class="Bw wall w022 w120"></div>
-            </div>
-        
-            <div class="rows">
-                <div class="Lw wall w103"></div>
-                <div class="boxes b10"></div>
-                <div class="Lw wall w101 w113"></div>
-                <div class="boxes b11"></div>
-                <div class="Lw wall w111 w123"></div>
-                <div class="boxes b12"></div>
-                <div class="Rw wall w121"></div>
-            </div>
-            <div class="rows">
-                <div class="Bw wall w102 w200"></div>
-                <div class="Bw wall w112 w210"></div>
-                <div class="Bw wall w122 w220"></div>
-            </div>
-        
-            <div class="rows">
-                <div class="Lw wall w203"></div>
-                <div class="boxes b20"></div>
-                <div class="Rw wall w201 w213"></div>
-                <div class="boxes b21"></div>
-                <div class="Rw wall w211 w223"></div>
-                <div class="boxes b22"></div>
-                <div class="Rw wall w221"></div>
-            </div>
-            <div class="rows">
-                <div class="Bw wall w202 w300"></div>
-                <div class="Bw wall w212 w310"></div>
-                <div class="Bw wall w222 w320"></div>
-            </div>
-          
-            <div class="rows">
-                <div class="Lw wall w303"></div>
-                <div class="boxes b30"></div>
-                <div class="Lw wall w301 w313"></div>
-                <div class="boxes b31"></div>
-                <div class="Rw wall w311 w323"></div>
-                <div class="boxes b32"></div>
-                <div class="Rw wall w321"></div>
-            </div>
-            <div class="rows">
-                <div class="Bw wall w302"></div>
-                <div class="Bw wall w312"></div>
-                <div class="Bw wall w322"></div>
-            </div>
+           
             
         </div>
         <div class="Player P2">
@@ -99,6 +38,7 @@
             <h3 class="P2_msg">Wait for your turn</h3>
         </div>
     </div>
+    <script src="app.js"></script>
+    <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 </html>

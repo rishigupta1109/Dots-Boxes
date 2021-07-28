@@ -114,7 +114,7 @@ html,body{
 .startbtn:hover{
     cursor: pointer;
 }
-input[type="text"]{
+input[type="text"],input[type="number"]{
     height:20px;
     width:135px;
 }
