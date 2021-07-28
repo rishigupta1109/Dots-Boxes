@@ -3,6 +3,26 @@ html,body{
     margin:0;
     padding:0;
 }
+@media (max-width:460px) {
+    #logo{
+        width: -webkit-fill-available;
+    }
+}
+@media (max-width:768px) {
+    .container{
+        width: auto !important;
+        height: auto !important;
+        padding:20px !important;
+        flex-direction: column !important;
+    }
+    .box{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: auto !important;
+        height: auto !important;
+        padding:60px !important;
+    }
+}
 .home{
     padding: 25px;
     background-color: black;
@@ -13,7 +33,7 @@ html,body{
     color: white;
 }
 .container{
-    height:600px;
+    height:500px;
     width:1349px;
     background-color: white;
     display: none;
@@ -117,4 +137,20 @@ html,body{
 input[type="text"],input[type="number"]{
     height:20px;
     width:135px;
+}
+.maincontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#reset{
+    display: none;
+    margin-top: 20px;
+    padding: 20px 40px;
+    margin-bottom: 10px;
+    border-radius:20px ;
+   background-color: black;
+   color: white;
+  
 }

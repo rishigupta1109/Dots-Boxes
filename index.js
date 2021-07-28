@@ -9,6 +9,37 @@ let box_condition=[];
 let player_count=0;
 let Player1;
 let Player2;
+
+document.getElementById("reset").addEventListener("click",()=>{
+    Array.from(document.getElementsByClassName("wall")).forEach(element=>{
+        element.style.backgroundColor="#c0a1ea";
+    })
+     Mapping=[];
+ Box_filler_mapping=[];
+ box_condition=[];
+    for(let i=0;i<n;i++){
+        Mapping.push([]);
+        Box_filler_mapping.push([]);
+        box_condition.push([]);
+        for(let j=0;j<m;j++){
+            Mapping[i].push([[0,0,0,0]]);
+            Box_filler_mapping[i].push([[]]);
+            box_condition[i].push([[0]]);
+    
+        }
+    } let boxes=document.getElementsByClassName("boxes");
+    Array.from(boxes).forEach((element)=>{
+           element.innerText="";
+        element.style.boxShadow="none";
+    
+})
+player_count=0;
+document.getElementsByClassName("P1_msg")[0].innerText="Wait for Your Turn";
+document.getElementsByClassName("P2_msg")[0].innerText="Your Turn";
+
+})
+
+
 document.getElementsByClassName("startbtn")[0].addEventListener("click",()=>{
     if(document.getElementById("P1init").value.trim().length!=0&&document.getElementById("P2init").value.trim().length!=0
     &&document.getElementById("row").value.trim().length!=0&&document.getElementById("column").value.trim().length!=0
@@ -17,6 +48,7 @@ document.getElementsByClassName("startbtn")[0].addEventListener("click",()=>{
     document.getElementsByClassName("home")[0].style.display="none";
     document.getElementsByClassName("navbar")[0].style.display="flex";
     document.getElementsByClassName("container")[0].style.display="flex";
+    document.getElementById("reset").style.display="flex";
      n=document.getElementById("row").value;
     m=document.getElementById("column").value;
     create();
@@ -39,7 +71,32 @@ document.getElementsByClassName("startbtn")[0].addEventListener("click",()=>{
     }
     
 })
+const box_shadow_remover=(player)=>{
+    let boxes=document.getElementsByClassName("boxes");
 
+    if(player==1){
+        Array.from(boxes).forEach((element)=>{
+            if(element.style.boxShadow=="rgb(255, 255, 255) 0px 0px 0.2rem, rgb(255, 255, 255) 0px 0px 0.2rem, rgb(74, 255, 15) 0px 0px 2rem, rgb(74, 255, 15) 0px 0px 0.8rem, rgb(74, 255, 15) 0px 0px 2.8rem, rgb(74, 255, 15) 0px 0px 1.3rem inset"){
+                element.style.boxShadow="none";
+            }
+        })
+    }
+    else if(player==2){
+        Array.from(boxes).forEach((element)=>{
+         
+            if(element.style.boxShadow=="rgb(255, 255, 255) 0px 0px 0.2rem, rgb(255, 255, 255) 0px 0px 0.2rem, rgb(255, 0, 0) 0px 0px 2rem, rgb(255, 0, 0) 0px 0px 0.8rem, rgb(255, 0, 0) 0px 0px 2.8rem, rgb(255, 0, 0) 0px 0px 1.3rem inset"){
+                element.style.boxShadow="none";
+            }
+        })
+    }
+    else{
+        Array.from(boxes).forEach((element)=>{
+           
+                element.style.boxShadow="none";
+            
+        })
+    }
+}
 const check_winner=()=>{
     let P1=0;
     let P2=0;
@@ -61,17 +118,17 @@ const check_winner=()=>{
        
     })
     if(P1>P2){
-       
+        box_shadow_remover(1);
         document.getElementsByClassName("P2_msg")[0].innerText="Better Luck Next Time";
         document.getElementsByClassName("P1_msg")[0].innerText="You Won";
     }
     else if(P1==P2){
-      
+        box_shadow_remover(3);
         document.getElementsByClassName("P2_msg")[0].innerText="Match Draw";
         document.getElementsByClassName("P1_msg")[0].innerText="Match Draw";
     }
     else{
-       
+        box_shadow_remover(2);
         document.getElementsByClassName("P2_msg")[0].innerText="You Won";
         document.getElementsByClassName("P1_msg")[0].innerText="Better Luck Next Time";
     }
