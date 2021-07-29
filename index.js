@@ -14,6 +14,8 @@ document.getElementById("reset").addEventListener("click",()=>{
     Array.from(document.getElementsByClassName("wall")).forEach(element=>{
         element.style.backgroundColor="#c0a1ea";
     })
+    document.getElementsByClassName("P1")[0].style.boxShadow="0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff0000, 0 0 0.8rem #ff0000, 0 0 2.8rem #ff0000, inset 0 0 1.3rem #ff0000";
+    document.getElementsByClassName("P2")[0].style.boxShadow=" 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #4aff0f, 0 0 0.8rem#4aff0f, 0 0 2.8rem #4aff0f, inset 0 0 1.3rem #4aff0f";
      Mapping=[];
  Box_filler_mapping=[];
  box_condition=[];
@@ -34,8 +36,8 @@ document.getElementById("reset").addEventListener("click",()=>{
     
 })
 player_count=0;
-document.getElementsByClassName("P1_msg")[0].innerText="Wait for Your Turn";
-document.getElementsByClassName("P2_msg")[0].innerText="Your Turn";
+document.getElementsByClassName("P2_msg")[0].innerText="Wait for Your Turn";
+document.getElementsByClassName("P1_msg")[0].innerText="Your Turn";
 
 })
 
@@ -80,6 +82,7 @@ const box_shadow_remover=(player)=>{
                 element.style.boxShadow="none";
             }
         })
+        document.getElementsByClassName("P2")[0].style.boxShadow="none";
     }
     else if(player==2){
         Array.from(boxes).forEach((element)=>{
@@ -88,6 +91,7 @@ const box_shadow_remover=(player)=>{
                 element.style.boxShadow="none";
             }
         })
+        document.getElementsByClassName("P1")[0].style.boxShadow="none";
     }
     else{
         Array.from(boxes).forEach((element)=>{
@@ -95,6 +99,8 @@ const box_shadow_remover=(player)=>{
                 element.style.boxShadow="none";
             
         })
+        document.getElementsByClassName("P1")[0].style.boxShadow="none";
+        document.getElementsByClassName("P2")[0].style.boxShadow="none";
     }
 }
 const check_winner=()=>{
@@ -177,6 +183,7 @@ const box_filled_checker=(i,ii)=>{
           box.style.boxShadow=  "0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #4aff0f, 0 0 0.8rem#4aff0f, 0 0 2.8rem #4aff0f, inset 0 0 1.3rem #4aff0f"  ;
     }
     }
+    return filled;
 }
 
 const wall_clicked=(e)=>{
@@ -186,28 +193,38 @@ const wall_clicked=(e)=>{
     const i1iii=wall_class_list[11];
    if(Mapping[i1i][i1ii][0][i1iii]==0){ 
     const class_name=wall_class_list[8]+wall_class_list[9]+wall_class_list[10]+wall_class_list[11];
-    if(player_count%2==0){document.getElementsByClassName(`${class_name}`)[0].style.backgroundColor="red";
-document.getElementsByClassName("P1_msg")[0].innerText="Wait for Your Turn";
-document.getElementsByClassName("P2_msg")[0].innerText="Your Turn";
-
+    if(player_count%2==0){
+        document.getElementsByClassName(`${class_name}`)[0].style.backgroundColor="red";
 }
     else{document.getElementsByClassName(`${class_name}`)[0].style.backgroundColor="green";
-    document.getElementsByClassName("P2_msg")[0].innerText="Wait for Your Turn";
-    document.getElementsByClassName("P1_msg")[0].innerText="Your Turn";}
-    
+    }
+    let filled1=false;
+    let filled2=false;
     Mapping[i1i][i1ii][0][i1iii]=1;
-    box_filled_checker(i1i,i1ii);
+    filled1=box_filled_checker(i1i,i1ii);
     if(wall_class_list.length>12){
        const i2i=wall_class_list[14];
        const i2ii=wall_class_list[15];
        const i2iii=wall_class_list[16];
        Mapping[i2i][i2ii][0][i2iii]=1;
-       box_filled_checker(i2i,i2ii);
+     filled2=  box_filled_checker(i2i,i2ii);
     }
     if(check_completition()){
         check_winner();
     }
-player_count++;}
+if(!(filled1||filled2)){
+   
+    if(player_count%2==0){
+        document.getElementsByClassName("P1_msg")[0].innerText="Wait for Your Turn";
+        document.getElementsByClassName("P2_msg")[0].innerText="Your Turn";
+    }
+    else{
+        document.getElementsByClassName("P2_msg")[0].innerText="Wait for Your Turn";
+        document.getElementsByClassName("P1_msg")[0].innerText="Your Turn";
+    }
+    player_count++;
+}
+}
 
 }
 

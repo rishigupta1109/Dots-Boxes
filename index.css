@@ -71,13 +71,13 @@ html,body{
     background-color: white;
 }
 .Lw,.Rw{
-    width:7px;
+    width:6px;
     height:64px;
     background-color: #c0a1ea;
 }
 .Tw,.Bw{
-    width:73.37px;
-    height:7px;
+    width:72px;
+    height:6px;
     background-color:#c0a1ea;
 }
 .boxes{
@@ -153,4 +153,7 @@ input[type="text"],input[type="number"]{
    background-color: black;
    color: white;
   
+}
+button:hover{
+    cursor: pointer;
 }
