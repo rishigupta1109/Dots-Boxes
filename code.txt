@@ -5,10 +5,23 @@
             </div>
             <div class="rows">
                 <div class="Lw wall w003"></div>
+                <div class="dot tl" ></div>
+                <div class="dot bl"></div>
+                <div class="dot tr"></div>
+                <div class="dot br"></div>
+            
                 <div class="boxes b00"></div>
                 <div class="Lw wall w001 w013"></div>
+                <div class="dot tl" ></div>
+                <div class="dot bl"></div>
+                <div class="dot tr"></div>
+                <div class="dot br"></div>
                 <div class="boxes b01"></div>
                 <div class="Lw wall w011 w023"></div>
+                <div class="dot tl" ></div>
+                <div class="dot bl"></div>
+                <div class="dot tr"></div>
+                <div class="dot br"></div>
                 <div class="boxes b02"></div>
                 <div class="Rw wall w021"></div>
             </div>
